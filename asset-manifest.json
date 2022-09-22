@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/curvilinear-grid-maker/static/css/main.7b7bf6f7.css",
-    "main.js": "/curvilinear-grid-maker/static/js/main.f151c12f.js",
+    "main.js": "/curvilinear-grid-maker/static/js/main.155f70cb.js",
     "static/js/787.680bf0b4.chunk.js": "/curvilinear-grid-maker/static/js/787.680bf0b4.chunk.js",
     "index.html": "/curvilinear-grid-maker/index.html",
     "main.7b7bf6f7.css.map": "/curvilinear-grid-maker/static/css/main.7b7bf6f7.css.map",
-    "main.f151c12f.js.map": "/curvilinear-grid-maker/static/js/main.f151c12f.js.map",
+    "main.155f70cb.js.map": "/curvilinear-grid-maker/static/js/main.155f70cb.js.map",
     "787.680bf0b4.chunk.js.map": "/curvilinear-grid-maker/static/js/787.680bf0b4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7b7bf6f7.css",
-    "static/js/main.f151c12f.js"
+    "static/js/main.155f70cb.js"
   ]
 }
