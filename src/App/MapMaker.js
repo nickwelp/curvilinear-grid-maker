@@ -37,6 +37,7 @@ const MapMaker = () => {
   const [vanishingLines, updateVanishingLines] = useState(10);
   const [enableVanishPoints, updateEnableVanishingPoints] = useState(true);
   const [showBeziers, updateShowBeziers] = useState(true);
+  const [fillBackground,updateFillBackground] = useState(true);
 
   const radiansArray = Array(36).fill(0).map((_,i) => (Math.PI/36) * i);
   const primaryCircleAngle = radiansArray[primaryAngle];
@@ -61,7 +62,12 @@ const MapMaker = () => {
     canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if(fillBackground){
+      ctx.rect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgb(255,255,255)';
+    }
 
+    ctx.fill();
     const makeCollapsingCircle = (rotation = 0, wN = 0, hN = 0, secondaryAngle = 0) => {
       const upper_extensions = wN === 0 && hN === 0 ? UPPER_EXTENSIONS : 1;
       const angle = wN === 0 ? -1*radiansArray[superRotation] :-1*radiansArray[superRotation] - secondaryAngle - Math.PI/2;
@@ -379,7 +385,9 @@ const MapMaker = () => {
         <p style={{ background: 'blue', color: 'white', fontWeight: 'bold', cursor: 'pointer', padding: '5px', margin: '10px auto', width: '200px' }} onClick={() => saveImage()}>Save Image</p>
         <MeasurementBar />
         <label>Enable Vanishing Points <input type="checkbox" value={enableVanishPoints} checked={enableVanishPoints} onClick={() => updateEnableVanishingPoints(!enableVanishPoints)}></input></label><br />
-        <label>Show Bezier Outer Curves<input type="checkbox" value={showBeziers} checked={showBeziers} onClick={() => updateShowBeziers(!showBeziers)}></input></label>
+        <label>Show Bezier Outer Curves<input type="checkbox" value={showBeziers} checked={showBeziers} onClick={() => updateShowBeziers(!showBeziers)}></input></label><br/>
+        <label>Render background white rather than transparent when saving the image:<input type="checkbox" value={fillBackground} checked={fillBackground} onClick={() => updateFillBackground(!fillBackground)}></input></label><br/>
+
       </div>
       <Box
       sx={{
