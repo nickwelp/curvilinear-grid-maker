@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/curvilinear-grid-maker/static/css/main.7b7bf6f7.css",
+    "main.js": "/curvilinear-grid-maker/static/js/main.891ca99e.js",
+    "static/js/787.680bf0b4.chunk.js": "/curvilinear-grid-maker/static/js/787.680bf0b4.chunk.js",
+    "index.html": "/curvilinear-grid-maker/index.html",
+    "main.7b7bf6f7.css.map": "/curvilinear-grid-maker/static/css/main.7b7bf6f7.css.map",
+    "main.891ca99e.js.map": "/curvilinear-grid-maker/static/js/main.891ca99e.js.map",
+    "787.680bf0b4.chunk.js.map": "/curvilinear-grid-maker/static/js/787.680bf0b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b7bf6f7.css",
+    "static/js/main.891ca99e.js"
+  ]
+}
