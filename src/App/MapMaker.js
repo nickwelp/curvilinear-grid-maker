@@ -372,7 +372,7 @@ const MapMaker = () => {
     ["Horizontally nudge center vanishing point", widthNudge, updatewidthNudge, -PAPER_CROPPING_WIDTH,  PAPER_CROPPING_WIDTH],
     ["Vertically nudge center vanishing point", heightNudge, updateheightNudge, -PAPER_CROPPING_HEIGHT, PAPER_CROPPING_HEIGHT ],
     ["Rotation of Grid within Clipping Rectange, 36/PI multiplied by this number", superRotation, updatesuperRotation, 0, 35 ],
-    ["Number of Receding Lines", vanishingLines, updateVanishingLines, 0, 18 ],
+    ["Number of Receding Lines", vanishingLines, updateVanishingLines, 0, 100 ],
     ["Rotation of the Horizontal Plane in relation to Vertical Plane", secondaryAngle, updatesecondaryAngle, 0,36]
   ];
 
@@ -384,7 +384,7 @@ const MapMaker = () => {
       <div className="options" style={{ maxWidth: '400px', right: '10px', border: '1px dashed #000', background: 'rgba(255,255,255,.7)', position: 'absolute' }}>
         <p style={{ background: 'blue', color: 'white', fontWeight: 'bold', cursor: 'pointer', padding: '5px', margin: '10px auto', width: '200px' }} onClick={() => saveImage()}>Save Image</p>
         <MeasurementBar />
-        <label>Enable Vanishing Points <input type="checkbox" value={enableVanishPoints} checked={enableVanishPoints} onClick={() => updateEnableVanishingPoints(!enableVanishPoints)}></input></label><br />
+        <label>Enable Receding Lines <input type="checkbox" value={enableVanishPoints} checked={enableVanishPoints} onClick={() => updateEnableVanishingPoints(!enableVanishPoints)}></input></label><br />
         <label>Show Bezier Outer Curves<input type="checkbox" value={showBeziers} checked={showBeziers} onClick={() => updateShowBeziers(!showBeziers)}></input></label><br/>
         <label>Render background white rather than transparent when saving the image:<input type="checkbox" value={fillBackground} checked={fillBackground} onClick={() => updateFillBackground(!fillBackground)}></input></label><br/>
 
