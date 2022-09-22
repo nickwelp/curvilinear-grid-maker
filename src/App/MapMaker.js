@@ -364,15 +364,15 @@ const MapMaker = () => {
   }
   const arrayOfOptions = [
     ["Number of Steps Between Major Axisis", NUMBER_OF_STEPS, updateNumberOfSteps, 1, 36],
+    ["Number of Receding Lines", vanishingLines, updateVanishingLines, 0, 100 ],
     ["Width in Pixels of Clipping Rectangle that Crops the Curvilinear Grid", PAPER_CROPPING_WIDTH, updatePAPER_CROPPING_WIDTH, 3, 10000],
+    ["Width of Horizontal Vanishing Points", PRIMARY_SPHEROID_WIDTH, updatePRIMARY_SPHEROID_WIDTH ,3, 10000],
     ["Height in Pixels of Clipping Rectangle that Crops the Curvilinear Grid", PAPER_CROPPING_HEIGHT, updatePAPER_CROPPING_HEIGHT,3,10000 ],
     ["Height of Vertical Vanishing Points", PRIMARY_SPHEROID_HEIGHT, updatePRIMARY_SPHEROID_HEIGHT, 3, 10000 ],
-    ["Width of Horizontal Vanishing Points", PRIMARY_SPHEROID_WIDTH, updatePRIMARY_SPHEROID_WIDTH ,3, 10000],
     ["Upper Extensions, bands past assymptote point, 1 is default", UPPER_EXTENSIONS, updateUPPER_EXTENSIONS, 1, 100 ],
     ["Horizontally nudge center vanishing point", widthNudge, updatewidthNudge, -PAPER_CROPPING_WIDTH,  PAPER_CROPPING_WIDTH],
     ["Vertically nudge center vanishing point", heightNudge, updateheightNudge, -PAPER_CROPPING_HEIGHT, PAPER_CROPPING_HEIGHT ],
     ["Rotation of Grid within Clipping Rectange, 36/PI multiplied by this number", superRotation, updatesuperRotation, 0, 35 ],
-    ["Number of Receding Lines", vanishingLines, updateVanishingLines, 0, 100 ],
     ["Rotation of the Horizontal Plane in relation to Vertical Plane", secondaryAngle, updatesecondaryAngle, 0,36]
   ];
 
