@@ -385,7 +385,7 @@ const MapMaker = () => {
       sx={{
         width: PAPER_CROPPING_WIDTH+4,
         height: PAPER_CROPPING_HEIGHT+4,
-        backgroundColor: '#EEEEBB',
+        backgroundColor: '#FFFFFF',
         margin: "3px",  
       }}
     >

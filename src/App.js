@@ -6,7 +6,7 @@ function App() {
       <header className="App-header">
       <h1>Six Point Perspective Grid Maker</h1>
       <h2>Curvilinear Grid Maker</h2>
-      <div style={{maxWidth: "600px", margin: 'auto', textAlign: 'left'}}>
+      <div style={{maxWidth: "600px", margin: 'auto', textAlign: 'left', fontSize: '12px'}}>
         <p>This app is to help make 6 point perpesctive grids, you can save to your device.</p>
         <p>Set the width and height of the Clipping Rectangle to represent paper you'd print this grid upon. 400DPI for 11x17 is 4400x6800.</p>
         <p>Then you can manipulate the size of the primary shperoid. If you set the width and height of the Primary Spheroid to the same as the Clipping Rectangle, the boundries will be at the edge.</p>
