@@ -25,25 +25,25 @@ const MapMaker = () => {
  } 
 
   const canvasRef = useRef(null);
-  const [NUMBER_OF_STEPS, updateNumberOfSteps] = useState(12);
+  const [NUMBER_OF_STEPS, updateNumberOfSteps] = useState(7);
   const [PAPER_CROPPING_WIDTH, updatePAPER_CROPPING_WIDTH] = useState(1200);
   const [PAPER_CROPPING_HEIGHT, updatePAPER_CROPPING_HEIGHT ] = useState(1200);
-  const [PRIMARY_SPHEROID_HEIGHT, updatePRIMARY_SPHEROID_HEIGHT ] = useState(1000);
-  const [PRIMARY_SPHEROID_WIDTH, updatePRIMARY_SPHEROID_WIDTH ] = useState(1000);
+  const [PRIMARY_SPHEROID_HEIGHT, updatePRIMARY_SPHEROID_HEIGHT ] = useState(600);
+  const [PRIMARY_SPHEROID_WIDTH, updatePRIMARY_SPHEROID_WIDTH ] = useState(600);
   const [UPPER_EXTENSIONS, updateUPPER_EXTENSIONS ] = useState(1);
-  const [widthNudge, updatewidthNudge ] = useState(100);
-  const [heightNudge, updateheightNudge ] = useState(100);
+  const [widthNudge, updatewidthNudge ] = useState(300);
+  const [heightNudge, updateheightNudge ] = useState(300);
   const [superRotation, updatesuperRotation ] = useState(0);
   const [primaryAngle, updatePrimaryAngle ] = useState(0);
   const [secondaryAngle, updatesecondaryAngle ] = useState(18);
   const [vanishingLines, updateVanishingLines] = useState(18);
   const [recedingBendingLines, updateRecedingBendingLines] = useState(11);
   const [enableVanishLines, updateEnableVanishingLines] = useState(true);
-  const [enableBendingVanishLines, updateEnableBendingVanishingLines] = useState(false);
-  const [spreadOfBendingVanishingLines, updateSpreadOfBendingVanishingLines] = useState(10);
-  const [drawSpheroid, updateDrawSpheroid] = useState(true);
+  const [enableBendingVanishLines, updateEnableBendingVanishingLines] = useState(true);
+  const [spreadOfBendingVanishingLines, updateSpreadOfBendingVanishingLines] = useState(20);
+  const [drawSpheroid, updateDrawSpheroid] = useState(false);
 
-  const [showBeziers, updateShowBeziers] = useState(true);
+  const [showBeziers, updateShowBeziers] = useState(false);
   const [fillBackground,updateFillBackground] = useState(true);
 
   const radiansArray = Array(36).fill(0).map((_,i) => (Math.PI/36) * i);

@@ -1,6 +1,9 @@
+import React, { useState } from 'react';
 import './App.css';
 import MapMaker from './App/MapMaker'
+import MultiPolarCurvilinear from './App/MultiVanishingPointQuadratic';
 function App() {
+  const [showExperimentalMapMaker, updateShowMapMaker] = useState(false);
   return (
     <div className="App">
       <header className="App-header">
@@ -13,8 +16,10 @@ function App() {
         <p>You can tilt the primary shperoid, and add upper extensions to it. The reflection spheroids do not have upper extension manipulation.</p>
         <p>When you're done, click 'save image' to download a PNG of the defined height and width.</p>
       </div>
+      <p><label>Show Experimental Map Maker<input type="checkbox" value={showExperimentalMapMaker} checked={showExperimentalMapMaker} onChange={()=>updateShowMapMaker(!showExperimentalMapMaker)} /></label></p>
       </header>
-      <MapMaker />
+      {!showExperimentalMapMaker && <MapMaker />}
+      {showExperimentalMapMaker && <MultiPolarCurvilinear />}
     </div>
   );
 }
