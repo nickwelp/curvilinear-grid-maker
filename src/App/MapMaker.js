@@ -37,10 +37,10 @@ const MapMaker = () => {
   const [primaryAngle, updatePrimaryAngle ] = useState(0);
   const [secondaryAngle, updatesecondaryAngle ] = useState(18);
   const [vanishingLines, updateVanishingLines] = useState(18);
-  const [recedingBendingLines, updateRecedingBendingLines] = useState(11);
+  const [recedingBendingLines, updateRecedingBendingLines] = useState(19);
   const [enableVanishLines, updateEnableVanishingLines] = useState(true);
   const [enableBendingVanishLines, updateEnableBendingVanishingLines] = useState(false);
-  const [spreadOfBendingVanishingLines, updateSpreadOfBendingVanishingLines] = useState(10);
+  const [spreadOfBendingVanishingLines, updateSpreadOfBendingVanishingLines] = useState(62);
   const [drawSpheroid, updateDrawSpheroid] = useState(true);
 
   const [showBeziers, updateShowBeziers] = useState(true);

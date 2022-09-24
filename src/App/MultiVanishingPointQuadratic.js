@@ -37,10 +37,10 @@ const MapMaker = () => {
   const [primaryAngle, updatePrimaryAngle ] = useState(0);
   const [secondaryAngle, updatesecondaryAngle ] = useState(18);
   const [vanishingLines, updateVanishingLines] = useState(18);
-  const [recedingBendingLines, updateRecedingBendingLines] = useState(11);
+  const [recedingBendingLines, updateRecedingBendingLines] = useState(22);
   const [enableVanishLines, updateEnableVanishingLines] = useState(true);
   const [enableBendingVanishLines, updateEnableBendingVanishingLines] = useState(true);
-  const [spreadOfBendingVanishingLines, updateSpreadOfBendingVanishingLines] = useState(20);
+  const [spreadOfBendingVanishingLines, updateSpreadOfBendingVanishingLines] = useState(62);
   const [drawSpheroid, updateDrawSpheroid] = useState(false);
 
   const [showBeziers, updateShowBeziers] = useState(false);
@@ -116,9 +116,6 @@ const MapMaker = () => {
           ctx.closePath()
         }
       }
-      // makeLinesOfTangent(wN, hN);  
-      // if(!(wN === 0 && hN ===0)) makeLinesOfTangent(wN, hN);  
-
     }
     const tangentPoints = [];
     const tangentLineEndPoints = [];
@@ -486,24 +483,29 @@ const MapMaker = () => {
     );
   }
   const arrayOfOptions = [
-    ["Number of Steps Between Major Axisis", NUMBER_OF_STEPS, updateNumberOfSteps, 1, 36],
-    ["Number of Receding Lines", vanishingLines, updateVanishingLines, 0, 100 ],
-    ["Number of Bending Receding Lines", recedingBendingLines, updateRecedingBendingLines, 0, 100 ],
+    ["Number of Bending Receding Lines", recedingBendingLines, updateRecedingBendingLines, 0, 100,"bending" ],
+    ["Spread of Bending Receding Lines", spreadOfBendingVanishingLines, updateSpreadOfBendingVanishingLines, 0,100, "bending"],
+    ["Number of Receding Lines", vanishingLines, updateVanishingLines, 0, 100, "receding" ],
+    ["Number of Steps Between Major Axisis of Spheroid", NUMBER_OF_STEPS, updateNumberOfSteps, 1, 36, "spheroid"],
     ["Width in Pixels of Clipping Rectangle that Crops the Curvilinear Grid", PAPER_CROPPING_WIDTH, updatePAPER_CROPPING_WIDTH, 3, 10000],
     ["Width of Horizontal Vanishing Points", PRIMARY_SPHEROID_WIDTH, updatePRIMARY_SPHEROID_WIDTH ,3, 10000],
     ["Height in Pixels of Clipping Rectangle that Crops the Curvilinear Grid", PAPER_CROPPING_HEIGHT, updatePAPER_CROPPING_HEIGHT,3,10000 ],
     ["Height of Vertical Vanishing Points", PRIMARY_SPHEROID_HEIGHT, updatePRIMARY_SPHEROID_HEIGHT, 3, 10000 ],
-    ["Upper Extensions, bands past assymptote point, 1 is default", UPPER_EXTENSIONS, updateUPPER_EXTENSIONS, 1, 100 ],
+    ["Upper Extensions, bands past assymptote point, 1 is default", UPPER_EXTENSIONS, updateUPPER_EXTENSIONS, 1, 100, "spheroid" ],
     ["Horizontally nudge center vanishing point", widthNudge, updatewidthNudge, -PAPER_CROPPING_WIDTH,  PAPER_CROPPING_WIDTH],
     ["Vertically nudge center vanishing point", heightNudge, updateheightNudge, -PAPER_CROPPING_HEIGHT, PAPER_CROPPING_HEIGHT ],
     ["Rotation of Grid within Clipping Rectange, 36/PI multiplied by this number", superRotation, updatesuperRotation, 0, 35 ],
     ["Rotation of the Horizontal Plane in relation to Vertical Plane", secondaryAngle, updatesecondaryAngle, 0,36],
-    ["Spread of Bending Receding Lines", spreadOfBendingVanishingLines, updateSpreadOfBendingVanishingLines, 0,100]
 
   ];
 
-  const MeasurementBar = () => arrayOfOptions.map(([label, val, handleChange, min, max], i) => {
-    return (<MeasurementBand key={label} label={label} val={val} handleChange={(v)=>{handleChange(v);}} min={min} max={max} />);
+  const MeasurementBar = () => arrayOfOptions.map(([label, val, handleChange, min, max, type="constant"], i) => {
+    if(
+      (type==="spheroid" && drawSpheroid) ||
+      (type==="bending" && enableBendingVanishLines) ||
+      (type==="receding" && enableVanishLines) || type==="constant"
+    ) return (<MeasurementBand key={label} label={label} val={val} handleChange={(v)=>{handleChange(v);}} min={min} max={max} />);
+    return <div key={label} />
   })
   // return (<div><p>hello woeld!</p></div>)
   return (<>
